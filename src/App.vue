@@ -1,23 +1,42 @@
 <template>
 	<img alt="Vue logo" src="./assets/logo.png" />
-	<!-- <HelloWorld msg="Welcome to Your Vue.js App" /> -->
-	<user :age="age" :name="name"></user>
+	<hr />
+	<!-- <button type="button" @click="age++">update age</button>
+
+	<button type="button" @click="age--">downgrade age</button> -->
+	<user
+		:age="age"
+		:name="name"
+		@up-age="upAgeby2"
+		@down-age="age--"
+		:ageChangeFunc="upAgeby2CB"
+	></user>
+	<greeting :age="age"></greeting>
 </template>
 
 <script>
 // import HelloWorld from "./components/HelloWorld.vue";
 import User from "./components/User.vue";
+import Greeting from "./components/Greeting.vue";
 export default {
 	name: "App",
 	components: {
 		User,
-		// HelloWorld,
+		Greeting,
 	},
 	data() {
 		return {
-			age: 20,
+			age: 18,
 			name: "Duy",
 		};
+	},
+	methods: {
+		upAgeby2(num) {
+			this.age += num;
+		},
+		upAgeby2CB(num) {
+			this.age += num;
+		},
 	},
 };
 </script>
