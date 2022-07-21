@@ -27,7 +27,7 @@ export default {
 	data() {
 		return {
 			age: 18,
-			name: "Duy",
+			name: "Nguyen Thanh Duy",
 		};
 	},
 	methods: {
